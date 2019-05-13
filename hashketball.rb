@@ -165,11 +165,8 @@ def player_stats(player)
 end
  
 def player_numbers(team_name)
- teams = game_hash.values
-# binding.pry
-  equipo = teams.find{|team| team.fetch(:team_name) == team_name}
-  
-   equipo[:players].map do |attribute, stats|
+ team = game_hash.values.find{|team| team.fetch(:team_name) == team_name}
+   team[:players].map do |attribute, stats|
    stats[:number] 
   end
  end
